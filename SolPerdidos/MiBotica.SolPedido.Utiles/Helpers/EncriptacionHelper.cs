@@ -30,7 +30,7 @@ namespace MiBotica.SolPedido.Utiles.Helpers
 
         private static Rfc2898DeriveBytes GetSecretKey()
         {
-            const string encryptionKey = "T@ll3rN3t2018";  // clave maestra
+            const string encryptionKey = "T@ll3rN3t2018";
             byte[] salt = Encoding.UTF8.GetBytes(encryptionKey);
 
             var secretKey = new Rfc2898DeriveBytes(encryptionKey, salt);
