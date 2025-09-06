@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Transversal", "03 Transversal", "{0A415B2F-3F47-49FF-A2CA-E7D1DDF6A945}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 BackEnd", "01 BackEnd", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 FrontEnd", "02 FrontEnd", "{F18B1DE1-0AF8-4A6B-ACEA-36DC12C2284D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.LogicaNegocio", "MiBotica.SolPedido.LogicaNegocio\MiBotica.SolPedido.LogicaNegocio.csproj", "{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.AccesoDatos", "MiBotica.SolPedido.AccesoDatos\MiBotica.SolPedido.AccesoDatos.csproj", "{9C42F215-2631-404B-9F19-F2E4F2A8CF9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.Cliente.Web", "MiBotica.SolPedido.Cliente.Web\MiBotica.SolPedido.Cliente.Web.csproj", "{242F04C8-F4C4-45C9-856A-250FFF8EA652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.Entidades", "MiBotica.SolPedido.Entidades\MiBotica.SolPedido.Entidades.csproj", "{910A78D4-E94B-4352-A8E1-61640ABFF878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.Utiles", "MiBotica.SolPedido.Utiles\MiBotica.SolPedido.Utiles.csproj", "{F2018DCF-2970-4EE9-A920-99BD9032BEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBotica.SolPedido.UtilesWeb", "MiBotica.SolPedido.UtilesWeb\MiBotica.SolPedido.UtilesWeb.csproj", "{A3118DEB-9CFF-40A7-B133-5CDD46513198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script DB", "Script DB", "{336EA0BE-83C7-4E07-B6BB-774B6C1C1847}"
+	ProjectSection(SolutionItems) = preProject
+		ScriptDB.sql = ScriptDB.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C42F215-2631-404B-9F19-F2E4F2A8CF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C42F215-2631-404B-9F19-F2E4F2A8CF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C42F215-2631-404B-9F19-F2E4F2A8CF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C42F215-2631-404B-9F19-F2E4F2A8CF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242F04C8-F4C4-45C9-856A-250FFF8EA652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242F04C8-F4C4-45C9-856A-250FFF8EA652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242F04C8-F4C4-45C9-856A-250FFF8EA652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242F04C8-F4C4-45C9-856A-250FFF8EA652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910A78D4-E94B-4352-A8E1-61640ABFF878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910A78D4-E94B-4352-A8E1-61640ABFF878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910A78D4-E94B-4352-A8E1-61640ABFF878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910A78D4-E94B-4352-A8E1-61640ABFF878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2018DCF-2970-4EE9-A920-99BD9032BEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2018DCF-2970-4EE9-A920-99BD9032BEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2018DCF-2970-4EE9-A920-99BD9032BEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2018DCF-2970-4EE9-A920-99BD9032BEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBF73D7A-4E3A-4C97-9978-78E295C7BBDA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9C42F215-2631-404B-9F19-F2E4F2A8CF9C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{242F04C8-F4C4-45C9-856A-250FFF8EA652} = {F18B1DE1-0AF8-4A6B-ACEA-36DC12C2284D}
+		{910A78D4-E94B-4352-A8E1-61640ABFF878} = {0A415B2F-3F47-49FF-A2CA-E7D1DDF6A945}
+		{F2018DCF-2970-4EE9-A920-99BD9032BEC0} = {0A415B2F-3F47-49FF-A2CA-E7D1DDF6A945}
+		{A3118DEB-9CFF-40A7-B133-5CDD46513198} = {0A415B2F-3F47-49FF-A2CA-E7D1DDF6A945}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADD071A2-DED1-4F3C-8CF6-830C376AEE74}
+	EndGlobalSection
+EndGlobal

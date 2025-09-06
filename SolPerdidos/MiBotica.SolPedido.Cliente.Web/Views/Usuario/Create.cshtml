@@ -1,0 +1,57 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Usuario
+
+@{
+    ViewBag.Title = "Crear Usuario";
+}
+
+<h2>Crear Usuario</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Usuario</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!-- CodUsuario -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CodUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Nombres -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombres, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombres, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- ClaveTexto (se encripta antes de guardar) -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClaveTexto, "Contraseña", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ClaveTexto, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ClaveTexto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Botón Guardar -->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

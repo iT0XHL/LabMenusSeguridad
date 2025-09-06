@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Usuario>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Lista de Usuarios</h3>
+        <div class="box-tools" style="margin-top:10px;">
+            @using (Html.BeginForm("Index", "Usuario", FormMethod.Get, new { id = "searchForm", @class = "form-inline", style = "display:flex; gap:10px;" }))
+            {
+                <input type="number" name="searchId" id="searchId"
+                       class="form-control"
+                       placeholder="Buscar por ID de usuario"
+                       value="@Request["searchId"]"
+                       style="flex:1;" />
+
+                <button type="submit" class="btn btn-default">
+                    <i class="fa fa-search"></i> Buscar
+                </button>
+
+                <a href="@Url.Action("Index", "Usuario")" class="btn btn-warning">
+                    <i class="fa fa-refresh"></i> Ver Todos
+                </a>
+
+                <a href="@Url.Action("Create", "Usuario")" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Nuevo Usuario
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="box-body table-responsive no-padding" style="margin-top:15px;">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th style="width:80px;">@Html.DisplayNameFor(model => model.FirstOrDefault().IdUsuario)</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CodUsuario)</th>
+                    <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Nombres)</th>
+                    <th style="width:260px;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-danger">
+                            No se encontraron usuarios.
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.IdUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CodUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Nombres)</td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-sm btn-warning" })
+                                @Html.ActionLink("Detalles", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-sm btn-info" })
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-sm btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Si se borra el input, se recarga la tabla automáticamente
+        document.getElementById("searchId").addEventListener("input", function () {
+            if (this.value === "") {
+                document.getElementById("searchForm").submit();
+            }
+        });
+    </script>
+}

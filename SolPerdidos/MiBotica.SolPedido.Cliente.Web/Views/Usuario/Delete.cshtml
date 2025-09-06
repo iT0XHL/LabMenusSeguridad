@@ -1,0 +1,39 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Usuario
+
+@{
+    ViewBag.Title = "Eliminar Usuario";
+}
+
+<h2>Eliminar Usuario</h2>
+
+<h3>¿Estás seguro de que deseas eliminar este usuario?</h3>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Usuario", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.IdUsuario)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver a la Lista", "Index")
+        </div>
+    }
+</div>
