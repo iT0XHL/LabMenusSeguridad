@@ -287,19 +287,15 @@ END
 GO
 
 -- Insertar
-
-CREATE PROCEDURE paUsuario_actualizar
-    @IdUsuario INT,
+CREATE PROCEDURE [dbo].[paUsuario_insertar]
     @CodUsuario VARCHAR(50),
-    @Nombres VARCHAR(100),
-    @Clave BINARY = NULL  -- Permitir nulo
+    @Clave BINARY(50),
+    @Nombres VARCHAR(50)
 AS
 BEGIN
-    UPDATE Usuario
-    SET CodUsuario = @CodUsuario,
-        Nombres = @Nombres,
-        Clave = COALESCE(@Clave, Clave) -- Si es NULL, no cambia
-    WHERE IdUsuario = @IdUsuario
+    SET NOCOUNT ON;
+    INSERT INTO Usuario (CodUsuario, Clave, Nombres)
+    VALUES (@CodUsuario, @Clave, @Nombres);
 END
 GO
 
