@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,19 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseLN.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="VariablesWeb.cs" />
     <Compile Include="Core\Opcion.cs" />
     <Compile Include="Core\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Parcial\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MiBotica.SolPedido.Utiles\MiBotica.SolPedido.Utiles.csproj">
-      <Project>{f2018dcf-2970-4ee9-a920-99bd9032bec0}</Project>
-      <Name>MiBotica.SolPedido.Utiles</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

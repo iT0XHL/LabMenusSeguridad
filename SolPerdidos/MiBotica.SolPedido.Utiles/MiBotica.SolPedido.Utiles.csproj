@@ -33,16 +33,22 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+	<Reference Include="System.Web" />
+	<Reference Include="System.Web.Mvc" />
+	<Reference Include="System.Web.Routing" />
+	<Reference Include="System.Web.WebPages" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Helpers\EncriptacionHelper.cs" />
+    <Compile Include="Helpers\MenuHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +59,12 @@
     <Content Include="Binarios\log4net.dll" />
     <Content Include="Binarios\System.Web.Mvc.dll" />
     <Content Include="Binarios\System.Web.WebPages.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiBotica.SolPedido.Entidades\MiBotica.SolPedido.Entidades.csproj">
+      <Project>{910a78d4-e94b-4352-a8e1-61640abff878}</Project>
+      <Name>MiBotica.SolPedido.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
