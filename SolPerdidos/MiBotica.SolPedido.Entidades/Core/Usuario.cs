@@ -13,7 +13,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         public byte[] Clave { get; set; }
         public string Nombres { get; set; }
 
-        // Adicionales
+        // Adicional
         public string ClaveTexto { get; set; }
     }
 }

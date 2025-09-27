@@ -50,7 +50,6 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             {
                 try
                 {
-                    // Encriptar clave si el usuario ingresó texto
                     if (!string.IsNullOrEmpty(usuario.ClaveTexto))
                     {
                         usuario.Clave = EncriptacionHelper.EncriptarByte(usuario.ClaveTexto);
@@ -76,7 +75,6 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
                 return HttpNotFound();
             }
 
-            // No mostrar clave binaria, solo preparar campo de texto vacío
             usuario.ClaveTexto = string.Empty;
 
             return View(usuario);
@@ -91,14 +89,13 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             {
                 try
                 {
-                    // Solo si se ingresó nueva clave se encripta y actualiza
                     if (!string.IsNullOrEmpty(usuario.ClaveTexto))
                     {
                         usuario.Clave = EncriptacionHelper.EncriptarByte(usuario.ClaveTexto);
                     }
                     else
                     {
-                        usuario.Clave = null; // se mantendrá la clave actual en el SP
+                        usuario.Clave = null; 
                     }
 
                     _usuarioLN.ActualizarUsuario(usuario);

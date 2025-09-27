@@ -72,10 +72,10 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
             Usuario usuario = null;
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("paUsuario_BuscaPorId", conexion)) // Cambiado aquí
+                using (SqlCommand comando = new SqlCommand("paUsuario_BuscaPorId", conexion)) 
                 {
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@IdUsuario", id); // Solo se necesita el ID
+                    comando.Parameters.AddWithValue("@IdUsuario", id); 
 
                     conexion.Open();
                     SqlDataReader reader = comando.ExecuteReader();
@@ -98,7 +98,7 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@CodUsuario", usuario.CodUsuario);
                     comando.Parameters.AddWithValue("@Nombres", usuario.Nombres);
-                    comando.Parameters.AddWithValue("@Clave", usuario.Clave); // si tienes campo clave
+                    comando.Parameters.AddWithValue("@Clave", usuario.Clave); 
 
                     conexion.Open();
                     comando.ExecuteNonQuery();
