@@ -1,4 +1,5 @@
 ﻿using MiBotica.SolPedido.Entidades.Core;
+using MiBotica.SolPedido.Entidades.Base;
 using MiBotica.SolPedido.LogicaNegocio.Core;
 using MiBotica.SolPedido.Utiles.Helpers;
 using System;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MiBotica.SolPedido.Cliente.Web.Controllers
 {
-    public class UsuarioController : Controller
+    public class UsuarioController : BaseLN
     {
         private readonly UsuarioLN _usuarioLN = new UsuarioLN();
 
