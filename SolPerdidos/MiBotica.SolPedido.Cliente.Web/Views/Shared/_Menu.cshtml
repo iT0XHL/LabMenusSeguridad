@@ -1,0 +1,25 @@
+﻿@model List<MiBotica.SolPedido.Entidades.Core.Opcion>
+
+@foreach (var opcion in Model.OrderBy(o => o.NroOrden))
+{
+    <li class="@(opcion.Hijos != null && opcion.Hijos.Count > 0 ? "treeview" : "")">
+        <a href="@(string.IsNullOrEmpty(opcion.UrlOpcion) || opcion.UrlOpcion == "#"
+                  ? "#"
+                  : Url.Action(opcion.UrlOpcion.Split('/')[1], opcion.UrlOpcion.Split('/')[0]))">
+            <i class="@opcion.RutaImagen"></i> <span>@opcion.NombreOpcion</span>
+            @if (opcion.Hijos != null && opcion.Hijos.Count > 0)
+            {
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            }
+        </a>
+
+        @if (opcion.Hijos != null && opcion.Hijos.Count > 0)
+        {
+            <ul class="treeview-menu">
+                @Html.Partial("_Menu", opcion.Hijos)
+            </ul>
+        }
+    </li>
+}
