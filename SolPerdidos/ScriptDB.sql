@@ -348,5 +348,14 @@ BEGIN
 	SELECT IdUsuario, CodUsuario, Clave, Nombres from Usuario
 END
 
+INSERT INTO Opcion (NombreOpcion, UrlOpcion, RutaImagen, NroOrden, IdOpcionRef)
+VALUES ('Inventario', '#', 'fa fa-archive', 6, 0);
+
+INSERT INTO Opcion (NombreOpcion, UrlOpcion, RutaImagen, NroOrden, IdOpcionRef)
+VALUES ('Productos', 'Producto/Index', 'fa fa-cube', 1, 
+        (SELECT MAX(IdOpcion) FROM Opcion WHERE NombreOpcion = 'Inventario'));
+
+INSERT INTO Opcion (NombreOpcion, UrlOpcion, RutaImagen, NroOrden, IdOpcionRef)
+VALUES ('Reportes', 'Reporte/Index', 'fa fa-bar-chart', 7, 0);
 
 GO

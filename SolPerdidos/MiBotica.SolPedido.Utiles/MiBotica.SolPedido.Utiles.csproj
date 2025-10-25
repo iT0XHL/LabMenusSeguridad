@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -40,10 +43,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-	<Reference Include="System.Web" />
-	<Reference Include="System.Web.Mvc" />
-	<Reference Include="System.Web.Routing" />
-	<Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
@@ -65,6 +68,9 @@
       <Project>{910a78d4-e94b-4352-a8e1-61640abff878}</Project>
       <Name>MiBotica.SolPedido.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

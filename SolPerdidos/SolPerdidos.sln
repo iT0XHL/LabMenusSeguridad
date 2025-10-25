@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script DB", "Script DB", "{
 		ScriptDB.sql = ScriptDB.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiUsuario", "ApiUsuario\ApiUsuario.csproj", "{A6CDB282-E9D3-43EE-BAFF-FA5369B94F7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3118DEB-9CFF-40A7-B133-5CDD46513198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6CDB282-E9D3-43EE-BAFF-FA5369B94F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6CDB282-E9D3-43EE-BAFF-FA5369B94F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6CDB282-E9D3-43EE-BAFF-FA5369B94F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6CDB282-E9D3-43EE-BAFF-FA5369B94F7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
