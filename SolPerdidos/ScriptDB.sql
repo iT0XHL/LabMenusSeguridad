@@ -348,6 +348,20 @@ BEGIN
 	SELECT IdUsuario, CodUsuario, Clave, Nombres from Usuario
 END
 
+GO
+
+/****** Object:  StoredProcedure [dbo].[paEliminarCliente]    Script Date: 20/11/2020 06:28:46 p. m. ******/
+CREATE PROCEDURE [dbo].[paEliminarCliente]
+    @Codigo INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DELETE FROM Clientes
+    WHERE Codigo = @Codigo;
+END
+GO
+
 INSERT INTO Opcion (NombreOpcion, UrlOpcion, RutaImagen, NroOrden, IdOpcionRef)
 VALUES ('Inventario', '#', 'fa fa-archive', 6, 0);
 
