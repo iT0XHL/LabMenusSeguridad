@@ -1,43 +1,104 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using MiBotica.SolPedido.Entidades.Core;
+using MiBotica.SolPedido.LogicaNegocio.Core;
 
 namespace ApiUsuario.Controllers
 {
+    [RoutePrefix("api/cliente")]
     public class ClienteController : ApiController
     {
-        // GET: api/Cliente
-        public IEnumerable<Cliente> Get()
+        private readonly ClienteLN _clienteLN = new ClienteLN();
+
+        // GET: api/cliente
+        [HttpGet]
+        [Route("")]
+        public IHttpActionResult Get()
         {
-            return Variables.ListaClientes;
+            try
+            {
+                List<Cliente> lista = _clienteLN.ListarClientes();
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // GET: api/Cliente/5
-        public Cliente Get(int id)
+        // GET: api/cliente/5
+        [HttpGet]
+        [Route("{id:int}")]
+        public IHttpActionResult Get(int id)
         {
-            return (from x in Variables.ListaClientes
-                    where x.Codigo == id
-                    select x).FirstOrDefault();
+            try
+            {
+                Cliente cliente = _clienteLN.BuscarCliente(id);
+                if (cliente == null)
+                    return NotFound();
+
+                return Ok(cliente);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // POST: api/Cliente
-        public void Post([FromBody] Cliente value)
+        // POST: api/cliente
+        [HttpPost]
+        [Route("")]
+        public IHttpActionResult Post([FromBody] Cliente value)
         {
-            Variables.ListaClientes.Add(value);
+            if (value == null)
+                return BadRequest("El objeto cliente no puede ser nulo.");
+
+            try
+            {
+                _clienteLN.InsertarCliente(value);
+                return Ok(new { mensaje = "Cliente registrado correctamente." });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // PUT: api/Cliente/5
-        public void Put(int id, [FromBody] Cliente value)
+        // PUT: api/cliente/5
+        [HttpPut]
+        [Route("{id:int}")]
+        public IHttpActionResult Put(int id, [FromBody] Cliente value)
         {
+            if (value == null)
+                return BadRequest("El objeto cliente no puede ser nulo.");
+
+            try
+            {
+                value.Codigo = id;
+                _clienteLN.ModificarCliente(value);
+                return Ok(new { mensaje = "Cliente actualizado correctamente." });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // DELETE: api/Cliente/5
-        public void Delete(int id)
+        // DELETE: api/cliente/5
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IHttpActionResult Delete(int id)
         {
+            try
+            {
+                _clienteLN.EliminarCliente(id);
+                return Ok(new { mensaje = "Cliente eliminado correctamente." });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }
